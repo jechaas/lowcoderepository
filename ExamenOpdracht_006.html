@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+    
+    
+    <title>opdracht 06</title>
+        
+		
+	<style>
+        .button{
+            width: 100px;
+            height: 50px;
+        }
+
+    </style>
+
+
+    <script>
+
+        function Excersize(){
+            var Excersizes = ["Sit-Ups", "Push-Ups", "Pull-Ups",
+             "Chin-Ups", "Squats", "Bench Press", "Standard Planks", "Sideways Planks"]
+            var x = Math.floor(Math.random() * Excersizes.length);
+            console.log(Excersizes[x]);
+            document.getElementById("excTxt").innerHTML = Excersizes[x];
+        }
+        function SetAmount(){
+            var Sets = ["1", "2", "3", "4", "5", "6",]
+            var y = Math.floor(Math.random() * Sets.length);
+            console.log(Sets[y])
+            document.getElementById("setsTxt").innerHTML = Sets[y] + " sets";
+        }
+        function RepAmount(){
+            var Reps = ["6", "8", "10", "12", "14", "16"]
+            var z = Math.floor(Math.random() * Reps.length);
+            console.log(Reps[z])
+            document.getElementById("repsTxt").innerHTML = Reps[z] + " repetitions";
+        }
+
+    </script>
+
+<h1>Random workout generator</h1>
+
+<input type="button"  onclick="Excersize()"    id="exc"     class="button" value="Excersize">
+<input type="button"  onclick="SetAmount()"    id="sets"    class="button" value="Sets">
+<input type="button"  onclick="RepAmount()"    id="reps"    class="button" value="Reps">
+
+<hr>
+
+<p id="myList"> <h2>next workout is:</h2> </p>
+<p id="excTxt"  style="font-size: 200%" class="resultTxt"> Excersize   </p>
+<p id="setsTxt" style="font-size: 200%" class="resultTxt"> Sets        </p>
+<p id="repsTxt" style="font-size: 200%" class="resultTxt"> Reps        </p>
+
+</body>
+</html>
+

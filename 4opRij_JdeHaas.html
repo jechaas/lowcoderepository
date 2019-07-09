@@ -1,0 +1,487 @@
+<head>
+
+</head>
+
+<body>
+    <!--////////////////////////////////////////////////// Page Visuals /////////////////////////////////////////////////////////-->
+    <style>
+        
+        table{
+            width: 700px;
+            height: 600px;
+            padding: 10px;
+            background-color: rgb(48, 60, 128);
+            border: 1px solid black;
+        }
+        
+        tr, td{
+            text-align: center;
+            border: 3px solid rgb(37, 40, 44);
+            border-radius: 50%;
+        }
+        tr, td:hover{
+            text-align: center;
+            border: 3px solid hotpink;
+            border-radius: 50%;
+
+        }
+
+        .UI{
+            width: 700px;
+            padding-top: 10px;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            background-color: rgb(30, 36, 116);
+        }
+        #heading, h1,h2{
+            color: azure;
+            display: inline;
+            text-transform: uppercase;
+            padding: 20px;
+        }
+        .restart{
+            width: 100px;
+            height: 30px;
+            background-color: whitesmoke;
+            border: 1px solid black;
+            border-radius: 25px;
+        }
+
+
+    </style>
+
+    <!--////////////////////////////////////////////////// Page Script /////////////////////////////////////////////////////////-->
+
+    <script>
+        var spelerkleur = "darkred";
+        var spelertext = "RED";
+
+        
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        function dropCoinRow1(){
+
+            var huidigekleur  = document.getElementById("rij11").style.backgroundColor;
+            var huidigekleur2 = document.getElementById("rij21").style.backgroundColor;
+            var huidigekleur3 = document.getElementById("rij31").style.backgroundColor;
+            var huidigekleur4 = document.getElementById("rij41").style.backgroundColor;
+            var huidigekleur5 = document.getElementById("rij51").style.backgroundColor;
+            var huidigekleur6 = document.getElementById("rij61").style.backgroundColor;
+
+            if(huidigekleur6 == "whitesmoke"){
+                document.getElementById("rij61").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur5 == "whitesmoke"){
+                document.getElementById("rij51").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur4 == "whitesmoke"){
+                document.getElementById("rij41").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur3 == "whitesmoke"){
+                document.getElementById("rij31").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur2 == "whitesmoke"){
+                document.getElementById("rij21").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur == "whitesmoke"){
+            document.getElementById("rij11").style.backgroundColor = spelerkleur
+            }
+
+                if(spelerkleur == "darkred"){
+                    spelerkleur = "gold"
+                    spelertext = "YELLOW"
+                }else if(spelerkleur == "gold"){
+                    spelerkleur = "darkred"
+                    spelertext = "RED"
+                }
+
+                
+        document.getElementById("spelerDivId").innerHTML = spelertext;
+        document.getElementById("spelerDivId").style.color = spelerkleur;
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        function dropCoinRow2(){
+
+            var huidigekleur  = document.getElementById("rij12").style.backgroundColor;
+            var huidigekleur2 = document.getElementById("rij22").style.backgroundColor;
+            var huidigekleur3 = document.getElementById("rij32").style.backgroundColor;
+            var huidigekleur4 = document.getElementById("rij42").style.backgroundColor;
+            var huidigekleur5 = document.getElementById("rij52").style.backgroundColor;
+            var huidigekleur6 = document.getElementById("rij62").style.backgroundColor;
+
+            if(huidigekleur6 == "whitesmoke"){
+                document.getElementById("rij62").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur5 == "whitesmoke"){
+                document.getElementById("rij52").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur4 == "whitesmoke"){
+                document.getElementById("rij42").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur3 == "whitesmoke"){
+                document.getElementById("rij32").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur2 == "whitesmoke"){
+                document.getElementById("rij22").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur == "whitesmoke"){
+                document.getElementById("rij12").style.backgroundColor = spelerkleur
+            }
+                
+                if(spelerkleur == "darkred"){
+                    spelerkleur = "gold"
+                    spelertext = "YELLOW"
+                }else if(spelerkleur == "gold"){
+                    spelerkleur = "darkred"
+                    spelertext = "RED"
+                }
+
+                
+        document.getElementById("spelerDivId").innerHTML = spelertext;
+        document.getElementById("spelerDivId").style.color = spelerkleur;
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        function dropCoinRow3(){
+
+            var huidigekleur  = document.getElementById("rij13").style.backgroundColor;
+            var huidigekleur2 = document.getElementById("rij23").style.backgroundColor;
+            var huidigekleur3 = document.getElementById("rij33").style.backgroundColor;
+            var huidigekleur4 = document.getElementById("rij43").style.backgroundColor;
+            var huidigekleur5 = document.getElementById("rij53").style.backgroundColor;
+            var huidigekleur6 = document.getElementById("rij63").style.backgroundColor;
+
+            if(huidigekleur6 == "whitesmoke"){
+                document.getElementById("rij63").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur5 == "whitesmoke"){
+                document.getElementById("rij53").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur4 == "whitesmoke"){
+                document.getElementById("rij43").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur3 == "whitesmoke"){
+                document.getElementById("rij33").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur2 == "whitesmoke"){
+                document.getElementById("rij23").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur == "whitesmoke"){
+                document.getElementById("rij13").style.backgroundColor = spelerkleur
+            }
+
+                if(spelerkleur == "darkred"){
+                    spelerkleur = "gold"
+                    spelertext = "YELLOW"
+                }else if(spelerkleur == "gold"){
+                    spelerkleur = "darkred"
+                    spelertext = "RED"
+                }
+
+                
+        document.getElementById("spelerDivId").innerHTML = spelertext;
+        document.getElementById("spelerDivId").style.color = spelerkleur;
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        function dropCoinRow4(){
+
+            var huidigekleur  = document.getElementById("rij14").style.backgroundColor;
+            var huidigekleur2 = document.getElementById("rij24").style.backgroundColor;
+            var huidigekleur3 = document.getElementById("rij34").style.backgroundColor;
+            var huidigekleur4 = document.getElementById("rij44").style.backgroundColor;
+            var huidigekleur5 = document.getElementById("rij54").style.backgroundColor;
+            var huidigekleur6 = document.getElementById("rij64").style.backgroundColor;
+
+            if(huidigekleur6 == "whitesmoke"){
+                document.getElementById("rij64").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur5 == "whitesmoke"){
+                document.getElementById("rij54").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur4 == "whitesmoke"){
+                document.getElementById("rij44").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur3 == "whitesmoke"){
+                document.getElementById("rij34").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur2 == "whitesmoke"){
+                document.getElementById("rij24").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur == "whitesmoke"){
+                document.getElementById("rij14").style.backgroundColor = spelerkleur
+            }
+                
+            if(spelerkleur == "darkred"){
+                    spelerkleur = "gold"
+                    spelertext = "YELLOW"
+                }else if(spelerkleur == "gold"){
+                    spelerkleur = "darkred"
+                    spelertext = "RED"
+                }
+
+                
+        document.getElementById("spelerDivId").innerHTML = spelertext;
+        document.getElementById("spelerDivId").style.color = spelerkleur;
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        function dropCoinRow5(){
+
+            var huidigekleur  = document.getElementById("rij15").style.backgroundColor;
+            var huidigekleur2 = document.getElementById("rij25").style.backgroundColor;
+            var huidigekleur3 = document.getElementById("rij35").style.backgroundColor;
+            var huidigekleur4 = document.getElementById("rij45").style.backgroundColor;
+            var huidigekleur5 = document.getElementById("rij55").style.backgroundColor;
+            var huidigekleur6 = document.getElementById("rij65").style.backgroundColor;
+
+            if(huidigekleur6 == "whitesmoke"){
+                document.getElementById("rij65").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur5 == "whitesmoke"){
+                document.getElementById("rij55").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur4 == "whitesmoke"){
+                document.getElementById("rij45").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur3 == "whitesmoke"){
+                document.getElementById("rij35").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur2 == "whitesmoke"){
+                document.getElementById("rij25").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur == "whitesmoke"){
+                document.getElementById("rij15").style.backgroundColor = spelerkleur
+            }
+
+                if(spelerkleur == "darkred"){
+                    spelerkleur = "gold"
+                    spelertext = "YELLOW"
+                }else if(spelerkleur == "gold"){
+                    spelerkleur = "darkred"
+                    spelertext = "RED"
+                }
+
+                
+        document.getElementById("spelerDivId").innerHTML = spelertext;
+        document.getElementById("spelerDivId").style.color = spelerkleur;
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        function dropCoinRow6(){
+
+            var huidigekleur  = document.getElementById("rij16").style.backgroundColor;
+            var huidigekleur2 = document.getElementById("rij26").style.backgroundColor;
+            var huidigekleur3 = document.getElementById("rij36").style.backgroundColor;
+            var huidigekleur4 = document.getElementById("rij46").style.backgroundColor;
+            var huidigekleur5 = document.getElementById("rij56").style.backgroundColor;
+            var huidigekleur6 = document.getElementById("rij66").style.backgroundColor;
+
+            if(huidigekleur6 == "whitesmoke"){
+                document.getElementById("rij66").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur5 == "whitesmoke"){
+                document.getElementById("rij56").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur4 == "whitesmoke"){
+                document.getElementById("rij46").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur3 == "whitesmoke"){
+                document.getElementById("rij36").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur2 == "whitesmoke"){
+                document.getElementById("rij26").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur == "whitesmoke"){
+                document.getElementById("rij16").style.backgroundColor = spelerkleur
+            }
+
+                if(spelerkleur == "darkred"){
+                    spelerkleur = "gold"
+                    spelertext = "YELLOW"
+                }else if(spelerkleur == "gold"){
+                    spelerkleur = "darkred"
+                    spelertext = "RED"
+                }
+
+                
+        document.getElementById("spelerDivId").innerHTML = spelertext;
+        document.getElementById("spelerDivId").style.color = spelerkleur;
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        function dropCoinRow7(){
+
+            var huidigekleur  = document.getElementById("rij17").style.backgroundColor;
+            var huidigekleur2 = document.getElementById("rij27").style.backgroundColor;
+            var huidigekleur3 = document.getElementById("rij37").style.backgroundColor;
+            var huidigekleur4 = document.getElementById("rij47").style.backgroundColor;
+            var huidigekleur5 = document.getElementById("rij57").style.backgroundColor;
+            var huidigekleur6 = document.getElementById("rij67").style.backgroundColor;
+
+            if(huidigekleur6 == "whitesmoke"){
+                document.getElementById("rij67").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur5 == "whitesmoke"){
+                document.getElementById("rij57").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur4 == "whitesmoke"){
+                document.getElementById("rij47").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur3 == "whitesmoke"){
+                document.getElementById("rij37").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur2 == "whitesmoke"){
+                document.getElementById("rij27").style.backgroundColor = spelerkleur
+            }
+            else if(huidigekleur == "whitesmoke"){
+                document.getElementById("rij17").style.backgroundColor = spelerkleur
+            }
+
+                if(spelerkleur == "darkred"){
+                    spelerkleur = "gold"
+                    spelertext = "YELLOW"
+                }else if(spelerkleur == "gold"){
+                    spelerkleur = "darkred"
+                    spelertext = "RED"
+                }
+
+                
+        document.getElementById("spelerDivId").innerHTML = spelertext;
+        document.getElementById("spelerDivId").style.color = spelerkleur;
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        function reButton(){
+            var hokjes = document.getElementsByClassName("col");
+            
+            for(var i=0; i<hokjes.length; i++) { 
+                hokjes[i].style.backgroundColor="whitesmoke";
+            }
+            
+            // inPlaatsVan...
+            // document.getElementById("rij11").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij21").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij31").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij41").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij51").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij61").style.backgroundColor = "whitesmoke"
+
+            // document.getElementById("rij12").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij22").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij32").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij42").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij52").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij62").style.backgroundColor = "whitesmoke"
+
+            // document.getElementById("rij13").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij23").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij33").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij43").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij53").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij63").style.backgroundColor = "whitesmoke"
+
+            // document.getElementById("rij14").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij24").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij34").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij44").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij54").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij64").style.backgroundColor = "whitesmoke"
+
+            // document.getElementById("rij15").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij25").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij35").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij45").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij55").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij65").style.backgroundColor = "whitesmoke"
+
+            // document.getElementById("rij16").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij26").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij36").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij46").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij56").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij66").style.backgroundColor = "whitesmoke"
+
+            // document.getElementById("rij17").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij27").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij37").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij47").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij57").style.backgroundColor = "whitesmoke"
+            // document.getElementById("rij67").style.backgroundColor = "whitesmoke"
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    </script>
+
+
+    <!--////////////////////////////////////////////////// Page Content /////////////////////////////////////////////////////////-->
+
+    <div class="UI">
+        
+
+        <div>
+                <h1>4 OP RIJ!</h1>
+ 
+        </div>
+        <div>
+            <h1>Turn player: </h1><h1 id="spelerDivId" style="color: darkred">RED</h1>
+            <input type="button" value="restart" id="restartButton" onclick="reButton()" class="restart" style="float: right;">
+        <!--    <input type="button" value="check" id="checkButton" onclick="checkWin()" class="check" style="float: right;"> -->
+        </div>
+
+    </div>
+
+
+
+    <table>
+        <tr> 
+            <td id="rij11" onclick="dropCoinRow1()" style="background-color: whitesmoke" class="col">11</td>
+            <td id="rij12" onclick="dropCoinRow2()" style="background-color: whitesmoke" class="col">12</td>
+            <td id="rij13" onclick="dropCoinRow3()" style="background-color: whitesmoke" class="col">13</td>
+            <td id="rij14" onclick="dropCoinRow4()" style="background-color: whitesmoke" class="col">14</td>
+            <td id="rij15" onclick="dropCoinRow5()" style="background-color: whitesmoke" class="col">15</td>
+            <td id="rij16" onclick="dropCoinRow6()" style="background-color: whitesmoke" class="col">16</td>
+            <td id="rij17" onclick="dropCoinRow7()" style="background-color: whitesmoke" class="col">17</td>
+        </tr>
+        <tr> 
+            <td id="rij21" onclick="dropCoinRow1()" style="background-color: whitesmoke" class="col">21</td>
+            <td id="rij22" onclick="dropCoinRow2()" style="background-color: whitesmoke" class="col">22</td>
+            <td id="rij23" onclick="dropCoinRow3()" style="background-color: whitesmoke" class="col">23</td>
+            <td id="rij24" onclick="dropCoinRow4()" style="background-color: whitesmoke" class="col">24</td>
+            <td id="rij25" onclick="dropCoinRow5()" style="background-color: whitesmoke" class="col">25</td>
+            <td id="rij26" onclick="dropCoinRow6()" style="background-color: whitesmoke" class="col">26</td>
+            <td id="rij27" onclick="dropCoinRow7()" style="background-color: whitesmoke" class="col">27</td>
+        </tr>
+        <tr> 
+            <td id="rij31" onclick="dropCoinRow1()" style="background-color: whitesmoke" class="col">31</td>
+            <td id="rij32" onclick="dropCoinRow2()" style="background-color: whitesmoke" class="col">32</td>
+            <td id="rij33" onclick="dropCoinRow3()" style="background-color: whitesmoke" class="col">33</td>
+            <td id="rij34" onclick="dropCoinRow4()" style="background-color: whitesmoke" class="col">34</td>
+            <td id="rij35" onclick="dropCoinRow5()" style="background-color: whitesmoke" class="col">35</td>
+            <td id="rij36" onclick="dropCoinRow6()" style="background-color: whitesmoke" class="col">36</td>
+            <td id="rij37" onclick="dropCoinRow7()" style="background-color: whitesmoke" class="col">37</td>
+        </tr>
+        <tr> 
+            <td id="rij41" onclick="dropCoinRow1()" style="background-color: whitesmoke" class="col">41</td>
+            <td id="rij42" onclick="dropCoinRow2()" style="background-color: whitesmoke" class="col">42</td>
+            <td id="rij43" onclick="dropCoinRow3()" style="background-color: whitesmoke" class="col">43</td>
+            <td id="rij44" onclick="dropCoinRow4()" style="background-color: whitesmoke" class="col">44</td>
+            <td id="rij45" onclick="dropCoinRow5()" style="background-color: whitesmoke" class="col">45</td>
+            <td id="rij46" onclick="dropCoinRow6()" style="background-color: whitesmoke" class="col">46</td>
+            <td id="rij47" onclick="dropCoinRow7()" style="background-color: whitesmoke" class="col">47</td>
+        </tr>
+        <tr> 
+            <td id="rij51" onclick="dropCoinRow1()" style="background-color: whitesmoke" class="col">51</td>
+            <td id="rij52" onclick="dropCoinRow2()" style="background-color: whitesmoke" class="col">52</td>
+            <td id="rij53" onclick="dropCoinRow3()" style="background-color: whitesmoke" class="col">53</td>
+            <td id="rij54" onclick="dropCoinRow4()" style="background-color: whitesmoke" class="col">54</td>
+            <td id="rij55" onclick="dropCoinRow5()" style="background-color: whitesmoke" class="col">55</td>
+            <td id="rij56" onclick="dropCoinRow6()" style="background-color: whitesmoke" class="col">56</td>
+            <td id="rij57" onclick="dropCoinRow7()" style="background-color: whitesmoke" class="col">57</td>
+        </tr>
+        <tr> 
+            <td id="rij61" onclick="dropCoinRow1()" style="background-color: whitesmoke" class="col">61</td>
+            <td id="rij62" onclick="dropCoinRow2()" style="background-color: whitesmoke" class="col">62</td>
+            <td id="rij63" onclick="dropCoinRow3()" style="background-color: whitesmoke" class="col">63</td>
+            <td id="rij64" onclick="dropCoinRow4()" style="background-color: whitesmoke" class="col">64</td>
+            <td id="rij65" onclick="dropCoinRow5()" style="background-color: whitesmoke" class="col">65</td>
+            <td id="rij66" onclick="dropCoinRow6()" style="background-color: whitesmoke" class="col">66</td>
+            <td id="rij67" onclick="dropCoinRow7()" style="background-color: whitesmoke" class="col">67</td>
+        </tr>
+    </table>
+
+</body>

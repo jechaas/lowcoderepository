@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+    
+    
+    <title>opdracht 03</title>
+        
+		
+	<style>
+        
+        select { 
+            color: gray; 
+            width: 100px;
+            padding: 5px 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f1f1f1;
+        }
+        .inputfield { 
+            color: gray; 
+            width: 100px;
+            padding: 5px 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f1f1f1;
+        }
+        .button1 { 
+            color: whitesmoke; 
+            width: 140px;
+            padding: 5px 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: olivedrab;
+        }
+        .button2 { 
+            color: whitesmoke; 
+            width: 140px;
+            padding: 5px 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: rgb(142, 35, 35);
+        }
+
+    </style>
+
+
+    <script>
+        
+        var myArr = [""];
+
+        function addItem(){
+            // input field values in variables
+            var item = document.getElementById("item").value;
+            var nummer = document.getElementById("nummer").value;
+            var eenheid = document.getElementById("eenheid").value;
+            
+            // merge inputs into a single variable
+            var inputItem = item + "  " + nummer + " " +eenheid ;
+
+            myArr.push(inputItem);
+                
+                var newListItem = "";
+
+                for(i = 0; i < myArr.length; i++){
+                    newListItem = newListItem + myArr[i] + "<br/>";
+                }
+
+                document.getElementById("myList").innerHTML = newListItem;
+            
+            // empty input fields
+            document.getElementById("item").value = "" ;
+            document.getElementById("nummer").value = "" ;
+            document.getElementById("eenheid").value = "" ;
+        }
+    
+        function clearList(){
+            // takes complete array length and deletes items for entire length from position0.
+            myArr.splice(0, myArr.length);
+            document.getElementById("myList").innerHTML = myArr;
+        }
+
+
+
+    </script>
+
+
+<!-- 2 input fields and 1 dropdown field for item input-->
+<input type="text" placeholder="ingredient"     id="item"   class="inputfield">""
+<input type="text" placeholder="hoeveelheid"    id="nummer" class="inputfield">
+<select id="eenheid">
+    <option value="" >eenheid       </option>
+    <option value="liter"   id="selOpts">l             </option>
+    <option value="gram"    id="selOpts">gr            </option>
+    <option value="stuks"   id="selOpts">stuks         </option>
+</select>
+
+<!-- add button-->
+<input type="button" onclick="addItem()"  value="voeg toe aan lijst"    class="button1">
+<!-- clear list button-->
+<input type="button" onclick="clearList()"  value="wis lijst"    class="button2">
+<!-- uiteindelijke lijstje-->
+<p id="myList"></p>
+
+</body>
+</html>
+

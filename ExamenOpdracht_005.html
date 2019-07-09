@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+    
+    
+    <title>opdracht 05</title>
+        
+		
+	<style>
+
+        .tabel {
+  		    background-color: rgb(68, 68, 68);
+  		    border-color: rgb(0, 0, 0);
+  		    border-radius: 10px;
+  		    padding: 20px;
+	    }
+
+         .Lamp {
+            border-radius: 100%;
+  		    padding: 50px;
+              
+	    }
+        .knop{
+            width: 150px;
+            height: 20px;
+
+        }
+
+    </style>
+
+
+<script>
+
+    function schakelaar(){
+
+        var HuidigeKleur = document.getElementById("LampR").style.backgroundColor
+        var HuidigeKleur2 = document.getElementById("LampG").style.backgroundColor
+        var HuidigeKleur3 = document.getElementById("LampY").style.backgroundColor
+
+        if( HuidigeKleur == "red"){
+            document.getElementById("LampR").style.backgroundColor = "grey";
+            document.getElementById("LampG").style.backgroundColor = "green";
+        }
+        else if(HuidigeKleur2 == "green"){
+            document.getElementById("LampG").style.backgroundColor = "grey";
+            document.getElementById("LampY").style.backgroundColor = "yellow";
+        }
+        else if(HuidigeKleur3 == "yellow"){
+            document.getElementById("LampY").style.backgroundColor = "grey";
+            document.getElementById("LampR").style.backgroundColor = "red";
+        }
+    }            
+                
+</script>
+
+<table class="tabel">
+    <tr>
+        <td id="LampR" class ="Lamp" style="background-color: red"></td>
+    </tr>
+    <tr>
+        <td id="LampY" class ="Lamp" style="background-color: grey" ></td>
+    </tr>
+    <tr>
+        <td id="LampG" class ="Lamp" style="background-color: grey" ></td>  
+    </tr>
+</table><br>
+
+<input type="button" onclick="schakelaar()" id="switch" class="knop" value="schakelaar" >
+
+</body>
+</html>
+

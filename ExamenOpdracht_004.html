@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+    
+    
+    <title>opdracht 04</title>
+        
+		
+	<style>
+        .button{
+            width: 100px;
+            height: 100px;
+            border: none;
+        }
+        .button:hover{
+            background-color: sandybrown;
+            width: 100px;
+            height: 100px;
+            border: none;
+        }
+    </style>
+
+
+    <script>
+        
+        var myReceipt = []
+/////////////////////////////////////////////////////////////////////////////////////////
+        function banana(){
+            var priceBanana     = 7;
+
+            myReceipt.push(priceBanana);
+                var newItem = "";
+
+                for(i = 0; i < myReceipt.length; i++){
+                    newItem = newItem + myReceipt[i] + "<br/>";
+                }
+                
+            document.getElementById("myList").innerHTML = newItem;
+            console.log(myReceipt)
+
+                var sum = myReceipt.reduce(myFunction, 0);
+        
+                console.log("sum is" + sum);
+                document.getElementById("subTotalSum").innerHTML = sum + "euro"
+
+                function myFunction(total, value) {
+                return total + value;
+                }
+        }
+/////////////////////////////////////////////////////////////////////////////////////////
+        function apples(){
+            var priceApples     = 1; 
+
+            myReceipt.push(priceApples);
+                var newItem = "";
+
+                for(i = 0; i < myReceipt.length; i++){
+                    newItem = newItem + myReceipt[i] + "<br/>";
+                }
+                
+            document.getElementById("myList").innerHTML = newItem;
+            console.log(myReceipt)
+
+                var sum = myReceipt.reduce(myFunction, 0);
+        
+                console.log("sum is" + sum);
+                document.getElementById("subTotalSum").innerHTML = sum + "euro"
+
+                function myFunction(total, value) {
+                return total + value;
+                }
+        }
+/////////////////////////////////////////////////////////////////////////////////////////
+        function pears(){
+            var pricePears      = 4;
+            
+            myReceipt.push(pricePears);
+                var newItem = "";
+
+                for(i = 0; i < myReceipt.length; i++){
+                    newItem = newItem + myReceipt[i] + "<br/>";
+                }
+                
+            document.getElementById("myList").innerHTML = newItem;
+            console.log(myReceipt)
+
+                var sum = myReceipt.reduce(myFunction, 0);
+        
+                console.log("sum is" + sum);
+                document.getElementById("subTotalSum").innerHTML = sum + "euro"
+
+                function myFunction(total, value) {
+                return total + value;
+                }
+        }
+/////////////////////////////////////////////////////////////////////////////////////////
+        function oranges(){
+            var priceOranges    = 2;
+            
+            myReceipt.push(priceOranges);
+                var newItem = "";
+
+                for(i = 0; i < myReceipt.length; i++){
+                    newItem = newItem + myReceipt[i] + "<br/>";
+                }
+                
+            document.getElementById("myList").innerHTML = newItem;
+            console.log(myReceipt)
+
+                var sum = myReceipt.reduce(myFunction, 0);
+        
+                console.log("sum is" + sum);
+                document.getElementById("subTotalSum").innerHTML = sum + "euro"
+
+                function myFunction(total, value) {
+                return total + value;
+                }
+        }
+/////////////////////////////////////////////////////////////////////////////////////////
+        function grapes(){
+            var priceGrapes     = 3;
+            
+            myReceipt.push(priceGrapes);
+                var newItem = "";
+
+                for(i = 0; i < myReceipt.length; i++){
+                    newItem = newItem + myReceipt[i] + "<br/>";
+                }
+                
+            document.getElementById("myList").innerHTML = newItem;
+            console.log(myReceipt)
+
+                    var sum = myReceipt.reduce(myFunction, 0);
+        
+                    console.log("sum is" + sum);
+                    document.getElementById("subTotalSum").innerHTML = sum + "euro"
+
+                    function myFunction(total, value) {
+  	                return total + value;
+	                }
+        }
+/////////////////////////////////////////////////////////////////////////////////////////
+        
+
+
+
+    </script>
+
+
+<input type="button"  onclick="banana()"    id="banana"   class="button" value="banana">
+<input type="button"  onclick="apples()"    id="apples"   class="button" value="apples">
+<input type="button"  onclick="pears()"     id="pears"    class="button" value="pears">
+<input type="button"  onclick="oranges()"   id="oranges"  class="button" value="oranges">
+<input type="button"  onclick="grapes()"    id="grapes"   class="button" value="grapes">
+
+<hr>
+
+<p >My receipt</p>
+<p id="myList"></p>
+
+<hr><br>
+
+<p >subTotal</p>
+<p id="subTotalSum"></p>
+
+</body>
+</html>
+

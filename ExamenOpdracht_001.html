@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+    
+    
+    <title>opdracht 01</title>
+        
+		
+	<style>
+        .inputs{
+            background-color: rgb(243, 243, 243);
+            width: 200px ;
+            margin-bottom: 5px;
+        }
+
+        .button1{
+            background-color: rgb(247, 247, 247);
+            width: 206px ;
+            height: 50px ;
+            margin-bottom: 50px;
+        }
+    </style>
+
+
+    <script>
+        
+		function sayHi() {
+            
+            var VOORNAAM = document.getElementById("VN").value;
+            var ACHTERNAAM = document.getElementById("AN").value;
+            var geboortedatum = document.getElementById("GD").value;
+            console.log(VOORNAAM)
+            console.log(ACHTERNAAM)
+            console.log(geboortedatum)
+
+            if(VOORNAAM == ""){
+                document.getElementById("berichtje").innerHTML = "Voer aub een voornaam in."
+            }   else if( ACHTERNAAM == ""){
+                document.getElementById("berichtje").innerHTML = "Voer aub een achternaam in."
+            }   else if( geboortedatum == ""){
+                document.getElementById("berichtje").innerHTML = "Voer aub een geboortdatum in."
+            }   else{
+                document.getElementById("berichtje").innerHTML = "Dag " + VOORNAAM + " " + ACHTERNAAM + ", wat fijn de je geboren bent op " + geboortedatum + " !"
+            }
+            
+		}
+			
+    </script>
+
+    
+    <input type="text" placeholder="Voornaam"   id="VN" class="inputs"> <br>
+    <input type="text" placeholder="Achternaam" id="AN" class="inputs"> <br>
+    <input type="date"                          id="GD" class="inputs"> <br>
+    
+    <button onclick="sayHi();" class="button1"> Dit ben ik! </button>
+
+    <div id="berichtje"></div>
+			
+
+</body>
+</html>
+
