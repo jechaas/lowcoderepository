@@ -1,0 +1,66 @@
+<html>
+
+
+<head>
+
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+        }
+
+        div {
+            border: 2px solid rgb(133, 133, 133);
+            color: rgb(238, 238, 238);
+            background-color: rgb(44, 44, 44);
+            width: 300px;
+            height: 100px;
+            padding: 10px;
+        }
+    </style>
+
+
+    <script>
+        
+        var evenArr = [];
+        var unevenArr = [];
+      
+        function checkNumber() {
+
+            var inputNr = document.getElementById("inputNumber").value;
+
+            if (inputNr % 2 == 0) {
+                // console.log(inputNr + " is even")
+                evenArr.push(inputNr);
+                // console.log(evenArr)
+
+            } else {
+                // console.log(inputNr + " is uneven")
+                unevenArr.push(inputNr);
+                // console.log(unevenArr)
+            }
+            
+            document.getElementById("evenDiv").innerHTML = evenArr;
+            document.getElementById("unevenDiv").innerHTML = unevenArr;
+
+
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <input type="text" id="inputNumber">
+
+    <button id="button" onclick="checkNumber()"> button </button>
+
+    <div id="evenDiv"></div>
+    <div id="unevenDiv"></div>
+
+
+</body>
+
+</html>

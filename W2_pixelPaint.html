@@ -1,0 +1,115 @@
+
+<html>
+    
+
+    <head>
+        
+        <style>
+           button{
+                width: 100px;
+                height: 50px;
+            }
+            tr, td{
+                background-color: rgb(44, 44, 44);
+                height: 40px;
+                width: 40px;
+            }
+
+            tr, td:hover{
+                background-color: rgb(154, 202, 224);
+                height: 40px;
+                width: 40px;
+            }
+        </style>        
+        
+        
+        <script>
+            
+            //var kleurtje = "hotpink";
+            var leeg = "green";
+            
+            function myFunction(x){
+                kleurtje = document.getElementById("kleur").value;
+                x.style.backgroundColor = kleurtje
+            }
+            function myClear(){
+                console.log(document.getElementsByClassName("pixel").style.backgroundColor)
+            }
+        </script>
+    
+
+    </head>
+    
+    <body>
+
+        Pen Color: <input type="color" id="kleur" value="#B7F6FE">
+
+
+    
+        <table>
+            <tr>
+                <td id="11" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="12" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="13" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="14" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="15" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="16" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="17" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="18" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="19" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="20" ondragover="myFunction(this)" class="pixel"></td>
+            </tr>
+            <tr>
+                <td id="21" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="22" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="23" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="24" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="25" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="26" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="27" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="28" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="29" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="30" ondragover="myFunction(this)" class="pixel"></td>
+            </tr>
+            <tr>
+                <td id="31" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="32" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="33" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="34" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="35" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="36" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="37" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="38" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="39" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="40" ondragover="myFunction(this)" class="pixel"></td>
+            </tr>
+            <tr>
+                <td id="41" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="42" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="43" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="44" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="45" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="46" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="47" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="48" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="49" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="50" ondragover="myFunction(this)" class="pixel"></td>
+            </tr>
+            <tr>
+                <td id="51" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="52" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="53" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="54" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="55" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="56" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="57" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="58" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="59" ondragover="myFunction(this)" class="pixel"></td>
+                <td id="60" ondragover="myFunction(this)" class="pixel"></td>
+            </tr>
+        </table>
+    
+
+    </body>
+    
+</html>

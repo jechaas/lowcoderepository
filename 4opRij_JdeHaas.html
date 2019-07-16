@@ -53,7 +53,9 @@
     <!--////////////////////////////////////////////////// Page Script /////////////////////////////////////////////////////////-->
 
     <script>
-        var spelerkleur = "darkred";
+        var player1Kleur = "darkred";
+        var player2Kleur = "green"
+        var spelerkleur = player1Kleur;                                              //"darkred";
         var spelertext = "RED";
 
         
@@ -87,11 +89,11 @@
             document.getElementById("rij11").style.backgroundColor = spelerkleur
             }
 
-                if(spelerkleur == "darkred"){
-                    spelerkleur = "gold"
+                if(spelerkleur == player1Kleur){
+                    spelerkleur = player2Kleur
                     spelertext = "YELLOW"
-                }else if(spelerkleur == "gold"){
-                    spelerkleur = "darkred"
+                }else if(spelerkleur == player2Kleur){
+                    spelerkleur = player1Kleur
                     spelertext = "RED"
                 }
 

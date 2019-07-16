@@ -1,0 +1,98 @@
+<html>
+
+
+<head>
+
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+        }
+
+        td {
+            border: 1px solid black;
+            height: 50px;
+            width: 200px;
+        }
+    </style>
+
+
+    <script>
+
+        function myFlag(x) {
+            console.log(x.value)
+            Kleur1 = document.getElementById("kleur1")
+            Kleur2 = document.getElementById("kleur2")
+            Kleur3 = document.getElementById("kleur3")
+            
+            if(x.value == "4"){
+                var countryNum = Math.floor(Math.random() * 4);
+                var country = countryNum.toString();
+            }else{
+                var country = x;                
+            }
+
+            console.log(country)
+
+            switch (country) {
+                case "0":
+                    console.log("nederland case werkt")
+                    Kleur1.style.backgroundColor = "rgb(168, 32, 32)";
+                    Kleur2.style.backgroundColor = "rgb(231, 231, 231)";
+                    Kleur3.style.backgroundColor = "rgb(32, 64, 168)";
+                    break;
+
+                case "1":
+                    console.log("duitsland case werkt")
+                    Kleur1.style.backgroundColor = "black";
+                    Kleur2.style.backgroundColor = "red";
+                    Kleur3.style.backgroundColor = "yellow";
+                    break;
+
+                case "2":
+                    console.log("engeland case werkt")
+                    Kleur1.style.backgroundColor = "whitesmoke";
+                    Kleur2.style.backgroundColor = "blue";
+                    Kleur3.style.backgroundColor = "red";
+                    break;
+
+                case "3":
+                    console.log("bulgarije case werkt")
+                    Kleur1.style.backgroundColor = "whitesmoke";
+                    Kleur2.style.backgroundColor = "green";
+                    Kleur3.style.backgroundColor = "red";
+                    break;
+
+
+
+            }
+
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+    <button id="button" onclick="myFlag(this)" value="0"> Nederland </button>
+    <button id="button" onclick="myFlag(this)" value="1"> Duitsland </button>
+    <button id="button" onclick="myFlag(this)" value="2"> Rusland </button>
+    <button id="button" onclick="myFlag(this)" value="3"> Bulgarije</button>
+    <button id="button" onclick="myFlag(this)" value="4"> Random</button>
+
+    <table>
+        <tr>
+            <td id="kleur1"></td>
+        </tr>
+        <tr>
+            <td id="kleur2"></td>
+        </tr>
+        <tr>
+            <td id="kleur3"></td>
+        </tr>
+
+    </table>
+</body>
+
+</html>
