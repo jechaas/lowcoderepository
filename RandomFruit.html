@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: rgb(46, 46, 46);
+            color: rgb(223, 223, 223);
+        }
+
+        div {
+            border: 1px solid rgb(223, 223, 223);
+            width: 300px;
+            padding: 10px;
+        }
+
+        button {
+            height: 50px;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+
+
+    <script>
+        var fruitBowl1 = ["kiwi", "pear", "apple", "orange"];
+        var fruitBowl2 = ["banana", "lemon", "peach", "cherry"];
+
+
+        function fCurrentState() {
+            console.log("onload body works")
+            document.getElementById("bowl1").innerHTML = fruitBowl1;
+            document.getElementById("bowl2").innerHTML = fruitBowl2;
+        }
+
+
+        function fExchange() {
+            var bowl1 = document.getElementById("bowl1")
+            var bowl2 = document.getElementById("bowl2")
+
+            var x = Math.floor(Math.random() * fruitBowl1.length);
+            var y = Math.floor(Math.random() * fruitBowl2.length);
+
+            var fruit1 = fruitBowl1[x];
+            var fruit2 = fruitBowl2[y];
+
+            //console.log(fruit1)
+            //console.log(fruit2)
+
+            fruitBowl1.splice(x, 1, fruit2);
+            fruitBowl2.splice(y, 1, fruit1);
+
+            //console.log(fruitBowl1)
+            //console.log(fruitBowl2)
+
+            document.getElementById("bowl1").innerHTML = fruitBowl1;
+            document.getElementById("bowl2").innerHTML = fruitBowl2;
+        }
+
+    </script>
+</head>
+
+<body onload="fCurrentState()">
+    <div id="bowl1">bowl1</div>
+
+    <button id="exchange random fruit!" onclick="fExchange()">exchange random fruit!</button>
+
+    <div id="bowl2">bowl2</div>
+</body>
+
+</html>

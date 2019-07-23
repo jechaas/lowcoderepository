@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>numberPlateGenerator</title>
+
+    <style>
+        .numberPlate{
+            padding: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 32px;
+            width: 200px;
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: goldenrod;
+        }
+    </style>
+
+    <script>
+        var letterArr = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+        var numberArr = [0,1,2,3,4,5,6,7,8,9];
+
+        function Randomize(){
+            var Plate = document.getElementById("numberPlate")
+            
+            var x = Math.floor(Math.random() * letterArr.length);
+            var y = Math.floor(Math.random() * letterArr.length);
+
+            var a = Math.floor(Math.random() * numberArr.length);
+            var b = Math.floor(Math.random() * numberArr.length);
+            var c = Math.floor(Math.random() * numberArr.length);
+
+            var u = Math.floor(Math.random() * letterArr.length);
+            var v = Math.floor(Math.random() * letterArr.length);
+
+            Plate.innerHTML = letterArr[x] + letterArr[y] + "-" + numberArr[a] + numberArr[b] + numberArr[c] + "-" + letterArr[u] + letterArr[v];  
+        } 
+
+    </script>
+</head>
+
+<body>
+    <div id="numberPlate" class="numberPlate">AB-123-A</div>
+    <button id="Randomize" onclick="Randomize()">button</button>
+</body>
+</html>
