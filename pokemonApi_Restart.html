@@ -1,0 +1,124 @@
+<html>
+
+
+<head>
+
+    <style>
+        body {
+            background-color: rgb(41, 41, 41);
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        td {
+            width: 120px;
+            height: 120px;
+            background-color: rgba(178, 180, 197, 0.445);
+            color: snow;
+            border-radius: 5px;
+        }
+
+        table {
+            border: 3px solid white;
+            background-color: rgb(178, 197, 197);
+        }
+        .tblId{
+            height: 50px;
+            width: 50px;
+        }
+
+    </style>
+
+
+    <script>
+        var posterPokemon = [];
+        var tableRows = [];
+        var tableCells = [];
+
+
+
+        function fPokemonId() {  //fetches pokemon ID or Name request from input.
+            var pokemon = document.getElementById("pokemonInput").value;
+            return pokemon;
+
+        }
+
+
+
+        function fApiCall(x) {
+            pokemon = fPokemonId();//var based on function output fPokemonId().
+
+            var xhr = new XMLHttpRequest(); //create HttpRequest.
+
+            xhr.onload = function () {
+                var jsonApi = JSON.parse(this.responseText); // convert Api string to live OBJ.
+                //console.log(jsonApi);
+                //console.log("# " + jsonApi.id + " " + jsonApi.name);
+                //console.log(jsonApi.sprites.front_default);
+
+                var pokemonIdName = "# " + jsonApi.id + " " + jsonApi.name;
+                var pokemonSprite = jsonApi.sprites.front_default
+
+                x.innerHTML = "<img" + " " + "src=" + pokemonSprite + ">" + "</img>" + "<div>" + pokemonIdName + "</div>"
+
+            }
+
+            xhr.open("GET", "https://pokeapi.co/api/v2/pokemon/" + pokemon.toLowerCase(pokemon), true);//Api addres, with call variable. Input converted to lowercase to conform to Api database.
+
+            xhr.send();
+
+        }
+
+        function generateTable(){
+            
+            document.getElementById("genTable").innerHTML = "<table id=tblId></table>";
+            var table = document.getElementById("tblId");
+
+            for(i=0; i<=5; i++){
+                var tableRows = [];
+                tableRows.push("<tr id=row" + [i] + ">"+ "yoyo" +"</tr>");
+                table.innerHTML = tableRows
+
+                for(c=0; c < 1; c++){
+                    tableCell = "<td id=cell" + [c] + ">"+ "jipjip" +"</td>";
+                    tableRows[i].innerHTML = tableCell 
+                    console.log(table)
+                }
+            }
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <input type="text" id="pokemonInput" oninput=""><br>
+
+
+    <table id="posterTbl">
+
+        <tr id="posterRow_1" style="text-align: center">
+
+            <td onclick="fApiCall(this)">01</td>
+            <td onclick="fApiCall(this)">02</td>
+            <td onclick="fApiCall(this)">03</td>
+
+        </tr>
+
+    </table>
+
+    <div id="genTable" onclick="generateTable()">
+        generate table
+    </div>
+
+
+</body>
+
+</html>

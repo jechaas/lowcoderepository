@@ -1,0 +1,152 @@
+<html>
+
+
+<head>
+
+    <style>
+        body {
+            background-color: rgb(41, 41, 41);
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        td{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(178, 197, 197);
+        }
+        table{
+            border: 1px dotted white;
+        }
+        #imgDiv {
+            background-color: brown;
+            padding: 20px;
+            width: 100px;
+            height: 100px;
+        }
+
+        #nameDiv {
+            color: snow;
+            margin-top: -10px;
+        }
+    </style>
+
+
+    <script>
+        var posterPokemon = [];
+
+        function fPokemonId() {  //fetches pokemon ID or Name request from input.
+            var pokemon = document.getElementById("pokemonInput").value;
+            return pokemon;
+        }
+
+        function fillArrPosterPokemon(){
+            for(i=0; i<5; i++){
+                console.log(i)
+                p = ["<td id=posterItem_" + [i] + "style=text-align: center><img id=spriteImg></img><div id=nameDiv></div></td>"];//var for <td> that gets pushed in the <tr>array (using i as increment ID).
+                posterPokemon.push(p);// pushing <td> into <tr>.
+                return posterPokemon;// return entire array to fBuildTable function.
+            }
+
+        }
+
+        function fBuildTable(){ //LETS TRY TO BUILD A ROW OF POKEMANS...
+            fillArrPosterPokemon(); //brings Arr from prior function over for refrencing.
+
+            var pR1 = document.getElementById("posterRow_1") //var for innerHTML of Row1 to fill in the e=next line.
+            pR1.innerHTML = posterPokemon; // fill var row1 with posterpokemonArr.
+        }
+
+        function fCreatePosterItem(x) { //execute function with argument x = jsonApi.
+            fBuildTable();
+
+            pokemonName = document.getElementById("nameDiv") //var for nameDiv.
+            pokemonSprite = document.getElementById("spriteImg")//var for pokemonSprite.
+
+            for(i=0; i<posterPokemon.length; i++){
+            
+                pokemonName.innerHTML = "#" + x.id + " " + x.name; // fills <div Id="nameDiv"> with pokemon id+name.
+                pokemonSprite.src = x.sprites.front_default; // fills <img Id="spriteImg">pokemon sprite image.
+    
+            }
+            console.log(posterPokemon)
+        }
+
+
+        function fApiCall() {
+            pokemon = fPokemonId();//var based on function output fPokemonId().
+ 
+            var xhr = new XMLHttpRequest(); //create HttpRequest.
+
+            xhr.onload = function () {
+                var jsonApi = JSON.parse(this.responseText); // convert Api string to live OBJ.
+                //console.log(jsonApi);
+                fCreatePosterItem(jsonApi); // call function with parsed jsonApi OBJ.
+            }
+
+            xhr.open("GET", "https://pokeapi.co/api/v2/pokemon/" + pokemon.toLowerCase(pokemon), true);//Api addres, with call variable. Input converted to lowercase to conform to Api database.
+
+            xhr.send();
+        }
+
+        function fTest(){
+            console.log(document.getElementById("posterItem_1").innerHTML)
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <input type="text" id="pokemonInput" oninput=""><br>
+    <button id="button" onclick="fApiCall()"> button </button><br>
+
+
+    <!-- <button id="tester" onclick="fBuildTable()"> test button </button><br> -->
+
+
+    <table id="posterTbl">
+
+        <tr id="posterRow_1" style="text-align: center">
+
+        </tr>
+
+    </table>
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    <!-- <div id="posterDiv" style="border: 1px solid snow">
+        <div id="imgDiv" style="text-align: center">
+            <img id="spriteImg" class="sprite"></img>
+            <div id="nameDiv">pokemon</div>
+        </div>
+
+    </div> -->
+
+
+</body>
+
+</html>
