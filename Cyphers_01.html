@@ -1,0 +1,155 @@
+<html>
+
+<head>
+    <title>Cyphers</title>
+    <style>
+        body {
+            background-color: rgb(41, 41, 41);
+        }
+
+        .inputPlaintext,
+        .inputKey {
+            color: white;
+            background-color: black;
+        }
+        .inputPlaintext {
+            height: 500px;
+            width: 500px;
+            resize: none;
+        }
+    </style>
+    <script>
+
+        // function myFunction() {
+	    //     for (i = 32; i<128; i++){
+
+        //     Alphabet += String.fromCharCode(i);    
+        //     }
+        //     return Alphabet;  
+        // }
+        // console.log("Lexicon is " + myFunction()); 
+        
+        // var Alphabet = myFunction();
+
+        var Alphabet = ".,!-_{|} abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" //"space" at start is its own character.
+        //var Alphabet = '!"#$?%&'+"'()*+,-./0123456789:;<=>@ABCDEFGHIJKLMNOPQRSTUVWXYZ][\^_`abcdefghijklmnopqrstuvwxyz{|}~";     // not all symbols (like "?/\[]+") do not work.
+        
+
+        function encrypt() {
+            console.log("encrypting");
+
+            var message = document.getElementById("Plaintext").value;
+            var messageLen = String(message).length;
+
+            var keyword = document.getElementById("Key").value;
+            console.log(keyword);
+
+            var keywordLen = String(keyword).length;
+            
+            //calculate difference for equation: keyvalue needed = messageLetterPosition - (keyLen*(messageLen/keyLen))
+            var MLen = messageLen;
+            var KLen = keywordLen;
+            var MKdif = Math.floor(messageLen/keywordLen);
+            
+            var Kextra = keyword.repeat(MKdif);
+            var Krest = MLen - Kextra.length;
+            var FinalKey = Kextra + keyword.slice(0,Krest);
+            var CypherText ="";
+
+            //console.log(MLen);
+            //console.log(KLen);
+            //console.log(MKdif);
+            //console.log(Kextra);
+            //console.log(Krest);
+            //console.log(FinalKey);
+            //console.log(Alphabet.length);
+
+            
+
+            for (x = 0; x < messageLen; x++) {
+
+                var MessageLetterValue = Alphabet.search(message.charAt(x));
+                console.log(MessageLetterValue);
+                  
+                var KeyLetterValue = Alphabet.search(FinalKey.charAt(x));
+                console.log(KeyLetterValue);
+
+                var CypherLetterValue = MessageLetterValue + KeyLetterValue;
+                console.log(" cypherletterValue= " + CypherLetterValue);
+                
+                if(CypherLetterValue > (Alphabet.length - 1)){
+                    CypherLetterValue -= Alphabet.length;
+                    //console.log("resized to: " + CypherLetterValue)                
+                }             
+
+                var CypherLetter = String(Alphabet.charAt(CypherLetterValue));
+                console.log(" cypherletter= " + CypherLetter);
+
+                CypherText += CypherLetter;
+
+            }
+            
+            console.log(" cypher= " + CypherText);
+            console.log(message);
+            document.getElementById("Plaintext").value = CypherText;
+
+        }
+
+        function decrypt() {
+            console.log("decrypting");
+
+            var Cypher = document.getElementById("Plaintext").value;
+            var CypherLen = String(Cypher).length;
+            var keyword = document.getElementById("Key").value;
+            var keywordLen = String(keyword).length;
+            var CLen = CypherLen;
+            var KLen = keywordLen;
+            var CKdif = Math.floor(CypherLen/keywordLen);
+            var Kextra = keyword.repeat(CKdif);
+            var Krest = CLen - Kextra.length;
+            var FinalKey = Kextra + keyword.slice(0,Krest);
+            var Message = "";
+            
+
+
+            for(y = 0; y < Cypher.length; y++){
+                var deCypherSymbolValue = Alphabet.search(Cypher.charAt(y));
+                console.log(deCypherSymbolValue);
+
+                var KeyLetterValue = Alphabet.search(FinalKey.charAt(y));
+                console.log(KeyLetterValue);
+
+                var decryptedMessageLetterValue = deCypherSymbolValue - KeyLetterValue;
+                console.log(" decryptedMessageLetterValue= " + decryptedMessageLetterValue);
+
+                if(decryptedMessageLetterValue < 0){
+                    decryptedMessageLetterValue += Alphabet.length;               
+                } 
+
+                var MessageLetter = String(Alphabet.charAt(decryptedMessageLetterValue));
+                console.log(" MessageLetter= " + MessageLetter);
+
+                Message += MessageLetter;
+                console.log(Message);
+
+            }
+            document.getElementById("Plaintext").value = Message;
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="blockCypher">
+        <input type="text" placeholder="write KEY-word" id="Key" class="inputKey"> <br>
+        <textarea placeholder="write message" id="Plaintext" class="inputPlaintext"></textarea> <br>
+
+        <button onclick="encrypt()">encrypt</button>
+        <button onclick="decrypt()">decrypt</button>
+
+        <div id="resulttext"></div>
+
+    </div>
+</body>
+
+</html>

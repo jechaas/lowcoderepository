@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>Cyphers</title>
+    <style>
+        body {
+            background-color: rgb(41, 41, 41);
+        }
+
+        .inputPlaintext,
+        .inputKey {
+            color: white;
+            background-color: black;
+        }
+        .inputPlaintext {
+            height: 500px;
+            width: 500px;
+            resize: none;
+        }
+    </style>
+    <script>
+
+        var Alphabet = ".,!-_{|} abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" //"space" at start is its own character.
+        //var Alphabet = '!"#$?%&'+"'()*+,-./0123456789:;<=>@ABCDEFGHIJKLMNOPQRSTUVWXYZ][\^_`abcdefghijklmnopqrstuvwxyz{|}~";     // not all symbols (like "?/\[]+") do not work.
+                
+        function encrypt() {
+            console.log("encrypt clicked");
+            console.log(Alphabet);
+            GetText();
+        }
+
+        function decrypt() {
+            console.log("decrypt clicked");
+
+        }
+       
+
+
+        function GetText() {
+            document.getElementById("Key").value;
+            document.getElementById("Plaintext").value;
+
+            console.log(document.getElementById("Key").value);       
+            console.log(document.getElementById("Plaintext").value);     
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <input type="text" id="Key" placeholder="write KEY-word" class="inputKey"><br>
+    <textarea id="Plaintext" placeholder="write message" class="inputPlaintext"></textarea><br>
+
+    <button onclick="encrypt()">encrypt</button>
+    <button onclick="decrypt()">decrypt</button>
+
+    <div id="resulttext"></div>
+</body>
+
+</html>
