@@ -53,6 +53,19 @@
                 document.getElementById("Message").value = decryption;      // the message in the field gets replaced with the decrypted version, now contained in the variable "decryption".
             }
         }
+
+        function CopyCypher() {
+            if(document.getElementById("Message").value==""){
+                alert("no Message detected");                               //validates if message is filled in.
+            }else{
+                var copyText = document.getElementById("Message");
+                copyText.select();
+                copyText.setSelectionRange(0, 99999)
+                document.execCommand("copy");
+                alert("Copied the text: " + copyText.value);
+            }
+        }
+
        
 ///////////////////CALL FUNCTIONS////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -125,6 +138,7 @@
 
         }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
 
     </script>
 
@@ -136,6 +150,7 @@
 
     <button onclick="encrypt()">encrypt</button>
     <button onclick="decrypt()">decrypt</button>
+    <button onclick="CopyCypher()">copy cypher</button>
 
     <div id="resulttext"></div>
 </body>
