@@ -7,42 +7,124 @@
             background-color: rgb(41, 41, 41);
         }
 
-        .inputPlaintext,
+        .inputMessage,
         .inputKey {
             color: white;
             background-color: black;
         }
-        .inputPlaintext {
+        .inputMessage {
             height: 500px;
             width: 500px;
             resize: none;
         }
     </style>
     <script>
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        var Alphabet = ".,!-_{|} abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" //"space" at start is its own character.
-        //var Alphabet = '!"#$?%&'+"'()*+,-./0123456789:;<=>@ABCDEFGHIJKLMNOPQRSTUVWXYZ][\^_`abcdefghijklmnopqrstuvwxyz{|}~";     // not all symbols (like "?/\[]+") do not work.
-                
+        var Alphabet = ".abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,!-_ " //A global variable is created containing the possible to use alphabet("space" at end is its own character.)
+
+///////////////////BUTTON FUNCTIONS/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         function encrypt() {
-            console.log("encrypt clicked");
-            console.log(Alphabet);
-            GetText();
+            if(document.getElementById("Key").value==""){
+                alert("no key detected");                                   //validates if keyword is filled in.
+            }else if(document.getElementById("Message").value==""){
+                alert("no Message detected");                               //validates if message is filled in.
+            }else{
+                console.log("encrypt");
+
+                var encryption = Scramble();                                // a variable is created containing the return value of the scrambling function.
+                console.log(encryption);
+                document.getElementById("Message").value = encryption;      // the message in the field gets replaced with the encrypted version, now contained in the variable "encryption".
+            }
+
         }
 
         function decrypt() {
-            console.log("decrypt clicked");
+            if(document.getElementById("Key").value==""){
+                alert("no key detected");                                   //validates if keyword is filled in.
+            }else if(document.getElementById("Message").value==""){
+                alert("no Message detected");                               //validates if message is filled in.
+            }else{
+                console.log("decrypt");
 
+                var decryption = Decypher();                                // a variable is created containing the return value of the decypher function.
+                console.log(decryption);
+                document.getElementById("Message").value = decryption;      // the message in the field gets replaced with the decrypted version, now contained in the variable "decryption".
+            }
         }
        
+///////////////////CALL FUNCTIONS////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-        function GetText() {
-            document.getElementById("Key").value;
-            document.getElementById("Plaintext").value;
-
-            console.log(document.getElementById("Key").value);       
-            console.log(document.getElementById("Plaintext").value);     
+        function GetKey() {
+            var key = document.getElementById("Key").value;             // a variable is created and filled with the content of the keyword field.
+            //console.log(document.getElementById("Key").value);
+            return key;                                                 // the variable "key" is passed on to where ever else in the script it is called by function.
         }
+
+        function GetMessage() {
+            var message = document.getElementById("Message").value;     // a variable is created and filled with the content of the message field.
+            //console.log(document.getElementById("Message").value);
+            return message;                                             // the variable "message" is passed on to where ever else in the script it is called by function.    
+        }
+
+        function ConstructKey(){                                        // this function will take the keyword and repeat it to match the message length.
+            var key = GetKey();                                         // a variable is created and filled with what is returned by "function GetKey()".
+            var message = GetMessage();                                 // a variable is created and filled with what is returned by "function GetMessage()".
+
+            var keyLen = key.length;                                    // a variable is created and filled with the length of the variable "key".
+            var messageLen = message.length;                            // a variable is created and filled with the length of the variable "message".
+            var keyDif = Math.floor(messageLen/keyLen);                 // a variable is created and filled with a calculation of how many times key fits in message".
+            var repKey = key.repeat(keyDif);                            // a variable is created and filled with the key repeated as many times as calculated in variable "repKey".
+            var restKey = messageLen - repKey.length;                   // a variable is created and filled with a calculation of the total message lenght deducted by the currently repeated key lenght to find rest character amount.
+            var finalKey = repKey + key.slice(0,restKey);               // a variable is created and filled with the repKey + the original key's characters counting from 0 to 0+restKey to construct the final key.
+
+            return finalKey;                                            // the final build key is returned to be used in other functions
+        }
+
+        function Scramble(){                                            // this function will take scramble the message by adding the key value per character to the message value per character.
+            var key = ConstructKey();                                   // a variable is created and filled with the return of function ConstructKey().
+            var message = GetMessage();                                 // a variable is created and filled with the return of function GetMessage().
+            var cypherText = "";                                        // a variable is created and filled with an empty string value to hold the later on calculated encryption.
+
+            for (x = 0; x < message.length; x++) {                              //a for loop is created to run its script for every character in message.
+                var messageLetterValue = Alphabet.search(message.charAt(x));    //a variable is created and filled with the the position value of the current message character within the global alphabet.
+                var keyLetterValue = Alphabet.search(key.charAt(x));            //a variable is created and filled with the the position value of the current key character within the global alphabet.
+                var cypherLetterValue = messageLetterValue + keyLetterValue;    //a variable is created and filled with the positional values of the current key and message character combined.
+                
+                if(cypherLetterValue > (Alphabet.length - 1)){                  //an if statement is called to see if the current combined value exceeds the global alphabet.length value.
+                    cypherLetterValue -= Alphabet.length;                       //if the if statement is true, deduct the total alphabet.length value from the current cypherletter value to be within range once again.
+                }
+
+                var cypherLetter = String(Alphabet.charAt(cypherLetterValue));  //a variable is created and filled with the the position value of the current cypher character within the global alphabet, and stringified.
+                cypherText += cypherLetter;                                     //the current cypherletter character is added to the total cyphertext message.
+            }
+
+            return cypherText;                                          // the cyphertext is returned to be used in another function.
+        }
+
+        function Decypher(){
+            var key = ConstructKey();
+            var message = GetMessage();
+            var decypheredText = "";
+
+            for (x = 0; x < message.length; x++) {
+                var messageLetterValue = Alphabet.search(message.charAt(x));                  
+                var keyLetterValue = Alphabet.search(key.charAt(x));
+                var cypherLetterValue = messageLetterValue - keyLetterValue;
+                
+                if(cypherLetterValue < 0){
+                    cypherLetterValue += Alphabet.length;               
+                }
+
+                var cypherLetter = String(Alphabet.charAt(cypherLetterValue));
+                decypheredText += cypherLetter;
+            }
+
+            return decypheredText;
+
+        }
+
 
     </script>
 
@@ -50,7 +132,7 @@
 
 <body>
     <input type="text" id="Key" placeholder="write KEY-word" class="inputKey"><br>
-    <textarea id="Plaintext" placeholder="write message" class="inputPlaintext"></textarea><br>
+    <textarea id="Message" placeholder="write message" class="inputMessage"></textarea><br>
 
     <button onclick="encrypt()">encrypt</button>
     <button onclick="decrypt()">decrypt</button>
